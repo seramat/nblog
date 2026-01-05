@@ -365,13 +365,6 @@
   </url>
   
   <url>
-    <loc>https://nblog.tieren.men/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C%EF%BC%8CTech%EF%BC%8C%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
-    <lastmod>2026-01-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://nblog.tieren.men/categories/%E4%BA%BA%E7%B1%BB%E5%AD%A6%EF%BC%8C%E5%8D%B0%E5%BA%A6%EF%BC%8C%E5%8D%97%E4%BA%9A%EF%BC%8C%E4%B8%AD%E4%BA%9A/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -379,7 +372,7 @@
   </url>
   
   <url>
-    <loc>https://nblog.tieren.men/categories/%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%AD%E4%BA%9A%EF%BC%8C%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://nblog.tieren.men/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C%EF%BC%8CTech%EF%BC%8C%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -393,7 +386,7 @@
   </url>
   
   <url>
-    <loc>https://nblog.tieren.men/categories/%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%9C%E5%8D%97%E4%BA%9A%EF%BC%8C%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://nblog.tieren.men/categories/%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%AD%E4%BA%9A%EF%BC%8C%E8%BD%AC%E5%8F%91/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -408,6 +401,13 @@
   
   <url>
     <loc>https://nblog.tieren.men/categories/AI%EF%BC%8CAPI%EF%BC%8CTech/</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nblog.tieren.men/categories/%E6%97%85%E8%A1%8C%EF%BC%8C%E4%B8%9C%E5%8D%97%E4%BA%9A%EF%BC%8C%E8%BD%AC%E5%8F%91/</loc>
     <lastmod>2026-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
