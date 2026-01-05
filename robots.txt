@@ -1,0 +1,6 @@
+# robots.txt for nblog.tieren.men
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nblog.tieren.men/sitemap.xml

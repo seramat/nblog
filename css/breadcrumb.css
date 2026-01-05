@@ -1,0 +1,44 @@
+/* 面包屑导航样式增强 */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border-radius: var(--card-s);
+  border-left: 3px solid var(--theme);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: '>';
+  margin: 0 0.5rem;
+  color: var(--theme);
+  opacity: 0.6;
+}
+
+.breadcrumb-item a {
+  color: var(--text-p2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--theme);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-p1);
+  font-weight: 500;
+}
+
+/* 面包屑结构化数据隐藏（对搜索引擎可见，用户不可见） */
+.schema-breadcrumb {
+  display: none;
+}

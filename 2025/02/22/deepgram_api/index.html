@@ -1,0 +1,955 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>刚戈看世界</title>
+
+  
+    <meta name="description" content="深度推荐：Deepgram 的 API Key——语音识别的强大工具发布于 2025-02-2021 关于 Deepgram 公司Deepgram 是一家领先的语音人工智能公司，成立于2015年，总部位于美国。作为 NVIDIA 的合作伙伴和 Y Combinator 的孵化企业，Deepgram 在语音识别领域处于行业前沿。公司已完成7200万美元的B轮融资，成为同阶段融资最多的语音AI公司。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刚戈看世界">
+<meta property="og:url" content="https://nblog.tieren.men/2025/02/22/deepgram_api/">
+<meta property="og:site_name" content="刚戈看世界">
+<meta property="og:description" content="深度推荐：Deepgram 的 API Key——语音识别的强大工具发布于 2025-02-2021 关于 Deepgram 公司Deepgram 是一家领先的语音人工智能公司，成立于2015年，总部位于美国。作为 NVIDIA 的合作伙伴和 Y Combinator 的孵化企业，Deepgram 在语音识别领域处于行业前沿。公司已完成7200万美元的B轮融资，成为同阶段融资最多的语音AI公司。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.tieren.men/file/3cb5cfef04bdce2625375.png">
+<meta property="article:published_time" content="2025-02-22T11:41:24.467Z">
+<meta property="article:modified_time" content="2025-02-22T12:19:11.353Z">
+<meta property="article:author" content="gang&#x2F;刚戈">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img.tieren.men/file/3cb5cfef04bdce2625375.png">
+<meta name="twitter:creator" content="@gangxiao">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="https://seramat.github.io/picx-images-hosting/panda.1lblkl298l.ico">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"gang/刚戈","sameAs":[],"image":"https://img.tieren.men/file/3cb5cfef04bdce2625375.png"},"dateCreated":"2025-02-22T19:41:24+08:00","dateModified":"2025-02-22T20:19:11+08:00","datePublished":"2025-02-22T19:41:24+08:00","description":"","headline":"","mainEntityOfPage":{"@type":"WebPage","@id":"https://nblog.tieren.men/2025/02/22/deepgram_api/"},"publisher":{"@type":"Organization","name":"gang/刚戈","sameAs":[],"image":"https://img.tieren.men/file/3cb5cfef04bdce2625375.png","logo":{"@type":"ImageObject","url":"https://img.tieren.men/file/3cb5cfef04bdce2625375.png"}},"url":"https://nblog.tieren.men/2025/02/22/deepgram_api/","thumbnailUrl":"https://seramat.github.io/picx-images-hosting/CleanShot-2025-02-22-at-20.17.11@2x.2obnqitm9e.png","image":1}</script>
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'"><meta name="robots" content="index, follow"><link rel="stylesheet" href="/css/breadcrumb.css">
+<!-- hexo injector head_end start -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://nblog.tieren.men/#website",
+      "url": "https://nblog.tieren.men/",
+      "name": "刚戈看世界",
+      "description": "",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://nblog.tieren.men/#author"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://nblog.tieren.men/#author",
+      "name": "gang/刚戈",
+      "url": "https://nblog.tieren.men/about/",
+      "sameAs": [
+        "https://github.com/seramat",
+        "https://twitter.com/gangxiao"
+      ],
+      "jobTitle": "Optical Network Systems Engineer",
+      "description": "跑步爱好者 | AI学习者 | 历史探索者"
+    }
+  ]
+}
+</script>
+  <!-- hexo injector head_end end -->
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://img.tieren.men/file/3cb5cfef04bdce2625375.png" alt="图片" loading="lazy" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">刚戈看世界</div><div class="sub normal cap">清风明月</div><div class="sub hover cap" style="opacity:0"> 白首相知</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper slide-up recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/12/14/%E4%B8%AD%E6%83%85%E5%B1%80%E6%98%AF%E5%A6%82%E4%BD%95%E5%9C%A8%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E5%B1%B1%E4%B8%A2%E5%A4%B1%E4%B8%80%E6%9E%9A%E6%A0%B8%E8%A3%85%E7%BD%AE%E7%9A%84%EF%BC%9F/"><span class="title">中情局是如何在喜马拉雅山丢失一枚核装置的？</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/seramat" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/ alt="图片" loading="lazy"></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner slide-up top"><img class="lazy bg" data-src="https://seramat.github.io/picx-images-hosting/CleanShot-2025-02-22-at-20.17.11@2x.2obnqitm9e.png" alt="图片" loading="lazy">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/lately/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/AI%EF%BC%8CAPI%EF%BC%8CTech/">AI，API，Tech</a></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/author/gang/">gang/刚戈</a><span class="sep"></span><span class="text created"><time datetime="2025-02-22T11:41:24.467Z">2025-02-22</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-22T12:19:11.353Z">2025-02-22</time></span></div></div></div>
+    
+  </div>
+  </div><article class="md-text content slide-up"><h1 id="深度推荐：Deepgram-的-API-Key——语音识别的强大工具"><a href="#深度推荐：Deepgram-的-API-Key——语音识别的强大工具" class="headerlink" title="深度推荐：Deepgram 的 API Key——语音识别的强大工具"></a>深度推荐：Deepgram 的 API Key——语音识别的强大工具</h1><p><em>发布于 2025-02-2021</em></p>
+<h2 id="关于-Deepgram-公司"><a href="#关于-Deepgram-公司" class="headerlink" title="关于 Deepgram 公司"></a>关于 Deepgram 公司</h2><p>Deepgram 是一家领先的语音人工智能公司，成立于2015年，总部位于美国。作为 NVIDIA 的合作伙伴和 Y Combinator 的孵化企业，Deepgram 在语音识别领域处于行业前沿。公司已完成7200万美元的B轮融资，成为同阶段融资最多的语音AI公司。</p>
+<p>Deepgram 的核心技术基于端到端的深度学习模型，能够处理实时流媒体和预录制的音频，支持多种语言的转录。其技术特点包括：</p>
+<ul>
+<li>统一的API接口，提供深度自然语言理解能力</li>
+<li>支持多种编程语言的SDK</li>
+<li>可扩展的GPU基础设施，用于训练和推理</li>
+<li>支持本地部署或托管云服务</li>
+<li>允许开发者针对特定用例训练自定义模型</li>
+</ul>
+<p>Deepgram 的目标是通过先进的AI技术，使语音数据对人类更有价值，对计算机更易使用。其技术已广泛应用于教育、医疗、客服等多个领域。</p>
+<p>在技术不断发展的今天，语音识别技术已经成为许多应用的核心。为了满足这种需求，Deepgram 提供了强大的 API Key，以便开发者能够轻松集成其自动化语音识别功能。本文将深入探讨 Deepgram 的 API Key 特点、技术分析、应用场景，并提供实际操作示例。希望这篇文章能够帮助您更好地理解和利用这一强大的工具。</p>
+<h2 id="什么是-Deepgram-的-API-Key"><a href="#什么是-Deepgram-的-API-Key" class="headerlink" title="什么是 Deepgram 的 API Key"></a>什么是 Deepgram 的 API Key</h2><p>Deepgram 的 API Key 是访问 Deepgram 语音识别服务的凭证。通过 API Key，开发者可以调用 Deepgram 的各种语音处理功能，如语音转文本、情感分析和意图识别。API Key 的使用使得开发者能够在其应用中集成高效的语音处理能力，提高用户体验。</p>
+<h3 id="API-Key-的获取和管理"><a href="#API-Key-的获取和管理" class="headerlink" title="API Key 的获取和管理"></a>API Key 的获取和管理</h3><p>获取 Deepgram 的 API Key 是使用其服务的第一步。开发者需要在 Deepgram 的官方网站注册一个账户，随后在控制面板中生成 API Key。生成的 API Key 需要妥善保管，以防止未授权的访问和使用。Deepgram 提供了详细的文档，指导用户如何安全地管理和使用 API Key。</p>
+<h2 id="Deepgram-的-API-Key-的技术特点"><a href="#Deepgram-的-API-Key-的技术特点" class="headerlink" title="Deepgram 的 API Key 的技术特点"></a>Deepgram 的 API Key 的技术特点</h2><p>Deepgram 的 API Key 提供了多种高级功能，支持开发者构建强大的语音应用。其技术特点包括高效的语音识别、实时处理能力和灵活的集成选项。</p>
+<h3 id="高效的语音识别"><a href="#高效的语音识别" class="headerlink" title="高效的语音识别"></a>高效的语音识别</h3><p>Deepgram 采用先进的 AI 模型进行语音识别，能够准确地将音频转换为文本。这些模型经过大量训练，能够处理各种音频输入，包括不同的口音和背景噪音。</p>
+<h3 id="实时处理能力"><a href="#实时处理能力" class="headerlink" title="实时处理能力"></a>实时处理能力</h3><p>Deepgram 的 API 支持实时音频处理，能够在语音输入的同时快速生成文本输出。这种实时处理能力使得其特别适用于需要即时反馈的应用场景，如语音助手和客服系统。</p>
+<h3 id="灵活的集成选项"><a href="#灵活的集成选项" class="headerlink" title="灵活的集成选项"></a>灵活的集成选项</h3><p>Deepgram 的 API 允许开发者根据需求选择不同的集成方式。API 支持多种编程语言和框架，提供了丰富的示例代码和文档，帮助开发者快速上手。</p>
+<h2 id="Deepgram-的-API-Key-的应用场景"><a href="#Deepgram-的-API-Key-的应用场景" class="headerlink" title="Deepgram 的 API Key 的应用场景"></a>Deepgram 的 API Key 的应用场景</h2><p>Deepgram 的 API Key 提供了多种应用场景，使得开发者能够在不同领域中构建创新的应用程序。</p>
+<h3 id="教育领域"><a href="#教育领域" class="headerlink" title="教育领域"></a>教育领域</h3><p>在教育领域，Deepgram 的语音识别技术可以实时转录课堂讲座，帮助学生更好地理解和复习课程内容。学生可以在课后查看转录文本，更加高效地学习和复习。</p>
+<h3 id="会议记录"><a href="#会议记录" class="headerlink" title="会议记录"></a>会议记录</h3><p>Deepgram 的 API 能够自动转录会议内容，提高企业的工作效率。员工可以通过文本记录快速查找会议要点，减少信息遗漏。</p>
+<h3 id="客服系统"><a href="#客服系统" class="headerlink" title="客服系统"></a>客服系统</h3><p>在客服系统中，Deepgram 的语音识别技术能够分析客户通话内容，帮助企业优化服务流程，提高客户满意度。</p>
+<h3 id="语音助手"><a href="#语音助手" class="headerlink" title="语音助手"></a>语音助手</h3><p>Deepgram 的实时语音识别能力使得其成为构建智能语音助手的理想选择。语音助手能够快速响应用户的语音命令，提升用户体验。</p>
+<h2 id="Deepgram-的-API-Key-的优势"><a href="#Deepgram-的-API-Key-的优势" class="headerlink" title="Deepgram 的 API Key 的优势"></a>Deepgram 的 API Key 的优势</h2><p>Deepgram 的 API Key 具有多项优势，使得其在市场上具有竞争力。</p>
+<h3 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h3><p>Deepgram 提供简洁的 API 接口，开发者可以轻松集成语音识别功能，无需复杂的配置和设置。</p>
+<h3 id="灵活性"><a href="#灵活性" class="headerlink" title="灵活性"></a>灵活性</h3><p>开发者可以根据需要选择不同的音频源进行转录，包括文件、URL 和实时流。这样的灵活性使得 Deepgram 能够适应各种应用场景。</p>
+<h3 id="高性能"><a href="#高性能" class="headerlink" title="高性能"></a>高性能</h3><p>Deepgram 的高级 AI 模型能够提供高精度的语音识别和语言处理能力，确保开发者能够构建出色的应用程序。</p>
+<h3 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h3><p>Deepgram 支持自定义选项和设置，满足不同用户的需求。开发者可以根据需求调整 API 的行为，确保应用程序的最佳性能。</p>
+<h3 id="社区支持"><a href="#社区支持" class="headerlink" title="社区支持"></a>社区支持</h3><p>Deepgram 拥有活跃的开发者社区，开发者可以在社区中交流经验和分享示例代码，快速解决开发过程中遇到的问题。</p>
+<h2 id="Deepgram-API-的实际操作示例"><a href="#Deepgram-API-的实际操作示例" class="headerlink" title="Deepgram API 的实际操作示例"></a>Deepgram API 的实际操作示例</h2><p>为了更好地理解 Deepgram 的 API Key 的使用，我们将通过一个实际操作示例来演示如何集成 Deepgram 的语音识别功能。</p>
+<h3 id="安装-SDK"><a href="#安装-SDK" class="headerlink" title="安装 SDK"></a>安装 SDK</h3><p>在开始编码之前，我们需要安装 Deepgram SDK。使用 pip 命令可以轻松完成安装：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install deepgram-sdk</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="获取-API-Token"><a href="#获取-API-Token" class="headerlink" title="获取 API Token"></a>获取 API Token</h3><p>要使用 Deepgram 的 API，我们需要首先获取 API Token。以下是获取 Token 的示例代码：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> deepgram <span class="keyword">import</span> Deepgram</span><br><span class="line"></span><br><span class="line">DEEPGRAM_API_KEY = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">deepgram = Deepgram(DEEPGRAM_API_KEY)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="转录音频文件"><a href="#转录音频文件" class="headerlink" title="转录音频文件"></a>转录音频文件</h3><p>使用 Deepgram 的 API 可以轻松转录音频文件。以下是转录音频文件的示例代码：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">transcribe_audio</span>(<span class="params">file_url</span>):</span><br><span class="line">    source = {<span class="string">'url'</span>: file_url}</span><br><span class="line">    response = <span class="keyword">await</span> deepgram.transcription.prerecorded(source, {<span class="string">'punctuate'</span>: <span class="literal">True</span>})</span><br><span class="line">    <span class="built_in">print</span>(response[<span class="string">'results'</span>][<span class="string">'channels'</span>][<span class="number">0</span>][<span class="string">'alternatives'</span>][<span class="number">0</span>][<span class="string">'transcript'</span>])</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Deepgram-API-Key-的安全性"><a href="#Deepgram-API-Key-的安全性" class="headerlink" title="Deepgram API Key 的安全性"></a>Deepgram API Key 的安全性</h2><p>在使用 Deepgram 的 API Key 时，确保其安全性至关重要。开发者需要采取措施防止 API Key 的泄露。</p>
+<h3 id="使用环境变量存储-API-Key"><a href="#使用环境变量存储-API-Key" class="headerlink" title="使用环境变量存储 API Key"></a>使用环境变量存储 API Key</h3><p>为了防止 API Key 泄露，建议将其存储在环境变量中。在代码中读取环境变量，而不是直接硬编码 API Key。</p>
+<h3 id="定期更换-API-Key"><a href="#定期更换-API-Key" class="headerlink" title="定期更换 API Key"></a>定期更换 API Key</h3><p>为了减少安全风险，建议定期更换 API Key。Deepgram 提供了简单的 API Key 管理工具，帮助用户轻松更换和管理 API Key。</p>
+<h3 id="限制-API-Key-的访问权限"><a href="#限制-API-Key-的访问权限" class="headerlink" title="限制 API Key 的访问权限"></a>限制 API Key 的访问权限</h3><p>在生成 API Key 时，可以设置其访问权限，以限制其只能访问特定的功能或资源。这样可以减少 API Key 被滥用的风险。</p>
+<h2 id="使用-Deepgram-的最佳实践"><a href="#使用-Deepgram-的最佳实践" class="headerlink" title="使用 Deepgram 的最佳实践"></a>使用 Deepgram 的最佳实践</h2><p>为了充分利用 Deepgram 的 API Key，开发者可以遵循一些最佳实践。</p>
+<h3 id="充分利用-Deepgram-的功能"><a href="#充分利用-Deepgram-的功能" class="headerlink" title="充分利用 Deepgram 的功能"></a>充分利用 Deepgram 的功能</h3><p>Deepgram 提供了多种功能，如意图识别、情感分析和命名实体识别。开发者可以根据需求灵活使用这些功能，提高应用的智能性。</p>
+<h3 id="优化音频质量"><a href="#优化音频质量" class="headerlink" title="优化音频质量"></a>优化音频质量</h3><p>为了获得更好的语音识别效果，建议优化音频文件的质量。可以使用降噪和增强工具改善音频质量，从而提高识别准确性。</p>
+<h3 id="重视用户隐私"><a href="#重视用户隐私" class="headerlink" title="重视用户隐私"></a>重视用户隐私</h3><p>在使用语音识别技术时，确保用户隐私是至关重要的。开发者需要遵循相关法律法规，确保用户数据的安全和隐私。</p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="什么是-Deepgram-的-API-Key？"><a href="#什么是-Deepgram-的-API-Key？" class="headerlink" title="什么是 Deepgram 的 API Key？"></a>什么是 Deepgram 的 API Key？</h3><p>Deepgram 的 API Key 是用于访问 Deepgram 语音识别服务的凭证。开发者使用 API Key 可以调用 Deepgram 提供的各种语音处理功能。</p>
+<h3 id="如何获取-Deepgram-的-API-Key？"><a href="#如何获取-Deepgram-的-API-Key？" class="headerlink" title="如何获取 Deepgram 的 API Key？"></a>如何获取 Deepgram 的 API Key？</h3><p>开发者可以在 Deepgram 的官方网站注册账户，随后在控制面板中生成 API Key。生成的 API Key 需要妥善保管，以防止未授权的访问。</p>
+<h3 id="Deepgram-的-API-Key-可以用于哪些场景？"><a href="#Deepgram-的-API-Key-可以用于哪些场景？" class="headerlink" title="Deepgram 的 API Key 可以用于哪些场景？"></a>Deepgram 的 API Key 可以用于哪些场景？</h3><p>Deepgram 的 API Key 可以用于多种场景，如实时转录课堂讲座、自动转录会议内容、分析客服通话以及构建智能语音助手。</p>
+<h3 id="如何确保-Deepgram-的-API-Key-的安全性？"><a href="#如何确保-Deepgram-的-API-Key-的安全性？" class="headerlink" title="如何确保 Deepgram 的 API Key 的安全性？"></a>如何确保 Deepgram 的 API Key 的安全性？</h3><p>为了确保 API Key 的安全性，建议将其存储在环境变量中，定期更换 API Key，并限制 API Key 的访问权限。</p>
+<h3 id="Deepgram-的-API-Key-有哪些优势？"><a href="#Deepgram-的-API-Key-有哪些优势？" class="headerlink" title="Deepgram 的 API Key 有哪些优势？"></a>Deepgram 的 API Key 有哪些优势？</h3><p>Deepgram 的 API Key 提供了高效的语音识别、实时处理能力和灵活的集成选项，使得开发者能够构建出色的语音应用程序。</p>
+<hr>
+<p>如果您有任何问题或需要进一步的帮助，请访问 <a target="_blank" rel="noopener" href="https://developers.deepgram.com/docs">Deepgram 官方文档</a> 或加入 <a target="_blank" rel="noopener" href="https://discord.gg/xWRaCDBtW4">Deepgram Discord 社区</a>。立即尝试 Deepgram 的 API Key，开启您的智能语音应用之旅！</p>
+</article>
+<div class="article-footer slide-up">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://nblog.tieren.men/2025/02/22/deepgram_api/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" / alt="图片" loading="lazy"></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://nblog.tieren.men/2025/02/22/deepgram_api/&title= - 刚戈看世界&pics=https://seramat.github.io/picx-images-hosting/CleanShot-2025-02-22-at-20.17.11@2x.2obnqitm9e.png&summary=深度推荐：Deepgram 的 API Key——语音识别的强大工具发布于 2025-02-2021
+关于 Deepgram 公司Deepgram 是一家领先的语音人工智能公司，成立于2015年，总部位于美国。作为 NVIDIA 的合..."><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" / alt="图片" loading="lazy"></a><a class="social share-item email" href="mailto:?subject= - 刚戈看世界&amp;body=https://nblog.tieren.men/2025/02/22/deepgram_api/"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" / alt="图片" loading="lazy"></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img  src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" / alt="图片" loading="lazy"></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://nblog.tieren.men/2025/02/22/deepgram_api/"/ alt="图片" loading="lazy">
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+<div class="related-wrap slide-up" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/02/23/%E8%BF%90%E5%8A%A8%E5%91%98%E5%9C%A8%E5%85%A8%E7%A8%8B%E9%A9%AC%E6%8B%89%E6%9D%BE%E4%B8%8E%E5%8D%8A%E7%A8%8B%E9%A9%AC%E6%8B%89%E6%9D%BE%E4%B8%AD%E7%9A%84%E8%A1%A8%E7%8E%B0%E5%88%86%E6%9E%90/">2025-02-23</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/02/22/grok-3/">2025-02-22</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer slide-up footnote"><hr><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://twitter.com/gangxiao">gang&#x2F;刚戈</a>  使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper slide-up toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E6%8E%A8%E8%8D%90%EF%BC%9ADeepgram-%E7%9A%84-API-Key%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E7%9A%84%E5%BC%BA%E5%A4%A7%E5%B7%A5%E5%85%B7"><span class="toc-text">深度推荐：Deepgram 的 API Key——语音识别的强大工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-Deepgram-%E5%85%AC%E5%8F%B8"><span class="toc-text">关于 Deepgram 公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Deepgram-%E7%9A%84-API-Key"><span class="toc-text">什么是 Deepgram 的 API Key</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API-Key-%E7%9A%84%E8%8E%B7%E5%8F%96%E5%92%8C%E7%AE%A1%E7%90%86"><span class="toc-text">API Key 的获取和管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepgram-%E7%9A%84-API-Key-%E7%9A%84%E6%8A%80%E6%9C%AF%E7%89%B9%E7%82%B9"><span class="toc-text">Deepgram 的 API Key 的技术特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E7%9A%84%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-text">高效的语音识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E5%A4%84%E7%90%86%E8%83%BD%E5%8A%9B"><span class="toc-text">实时处理能力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B5%E6%B4%BB%E7%9A%84%E9%9B%86%E6%88%90%E9%80%89%E9%A1%B9"><span class="toc-text">灵活的集成选项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepgram-%E7%9A%84-API-Key-%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">Deepgram 的 API Key 的应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E8%82%B2%E9%A2%86%E5%9F%9F"><span class="toc-text">教育领域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95"><span class="toc-text">会议记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F"><span class="toc-text">客服系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B"><span class="toc-text">语音助手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepgram-%E7%9A%84-API-Key-%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">Deepgram 的 API Key 的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%93%E7%94%A8%E6%80%A7"><span class="toc-text">易用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%81%B5%E6%B4%BB%E6%80%A7"><span class="toc-text">灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD"><span class="toc-text">高性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%89%A9%E5%B1%95%E6%80%A7"><span class="toc-text">可扩展性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E6%94%AF%E6%8C%81"><span class="toc-text">社区支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepgram-API-%E7%9A%84%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B"><span class="toc-text">Deepgram API 的实际操作示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-SDK"><span class="toc-text">安装 SDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-API-Token"><span class="toc-text">获取 API Token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E5%BD%95%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6"><span class="toc-text">转录音频文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deepgram-API-Key-%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">Deepgram API Key 的安全性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%AD%98%E5%82%A8-API-Key"><span class="toc-text">使用环境变量存储 API Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%8D%A2-API-Key"><span class="toc-text">定期更换 API Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%90%E5%88%B6-API-Key-%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-text">限制 API Key 的访问权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Deepgram-%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-text">使用 Deepgram 的最佳实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%85%E5%88%86%E5%88%A9%E7%94%A8-Deepgram-%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">充分利用 Deepgram 的功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E9%9F%B3%E9%A2%91%E8%B4%A8%E9%87%8F"><span class="toc-text">优化音频质量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A7%86%E7%94%A8%E6%88%B7%E9%9A%90%E7%A7%81"><span class="toc-text">重视用户隐私</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FAQ"><span class="toc-text">FAQ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Deepgram-%E7%9A%84-API-Key%EF%BC%9F"><span class="toc-text">什么是 Deepgram 的 API Key？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-Deepgram-%E7%9A%84-API-Key%EF%BC%9F"><span class="toc-text">如何获取 Deepgram 的 API Key？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deepgram-%E7%9A%84-API-Key-%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E5%93%AA%E4%BA%9B%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="toc-text">Deepgram 的 API Key 可以用于哪些场景？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D-Deepgram-%E7%9A%84-API-Key-%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%9F"><span class="toc-text">如何确保 Deepgram 的 API Key 的安全性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deepgram-%E7%9A%84-API-Key-%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8A%BF%EF%BC%9F"><span class="toc-text">Deepgram 的 API Key 有哪些优势？</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/scrollreveal@4.0/dist/scrollreveal.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const slideUp = {
+      distance: `8px`,
+      duration: `1000`,
+      interval: `100`,
+      scale: `1`,
+      opacity: 0,
+      easing: "ease-out"
+    };
+    ScrollReveal({ container: '.widgets' }).reveal('.slide-up', { ...slideUp });
+    ScrollReveal({ container: '.l_main' }).reveal('.slide-up', { ...slideUp });
+    ScrollReveal({ container: '.l_right' }).reveal('.slide-up', { ...slideUp });
+  });
+</script>
+
+  <script defer src="https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js"></script>
+  <script defer>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new ChucklePostAI(Object.assign({
+        el: 'article.content',
+        css: `/css/_plugins/tianli_gpt`
+      }, JSON.parse(`{"enable":true,"js":"https://jsd.onmicrosoft.cn/gh/qxchuckle/Post-Summary-AI@6.0/chuckle-post-ai.min.js","field":"post","key":"S-7U7W482MZM1TJLRF","total_length":1000,"typewriter":true,"summary_directly":true,"rec_method":"all","hide_shuttle":true,"summary_toggle":false,"interface":{"name":"AI摘要","introduce":"我是文章辅助AI: QX-AI，点击下方的按钮，让我生成本文简介、推荐相关文章等。","version":"TianliGPT","button":["介绍自己","推荐文章","生成摘要","矩阵穿梭"]}}`)))
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
